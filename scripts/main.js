@@ -38,33 +38,40 @@ document.addEventListener('mousemove', (e) => {
     }
 })
 
-// Sets the position of the buttom using string interpolation
 function setButtonPosition(left, top) {
 
-    // Gets the size of the window box to check if our button is 
-    // overlapping the edge of our window
+    // Gets the size of the window box to check if our button is...
+    // ...overlapping the edge of our window
     const windowBox = document.body.getBoundingClientRect()
     const buttonBox = evilButton.getBoundingClientRect()
 
+    // Sets the button to overlap/transfer to the other side of the page,..
+    // ...if it's halfway point meets the edge of the page/window
+
+    // Gone off the left side of the page
     if (distanceFromCenter(left, windowBox.left, buttonBox.width) < 0) {
         left = windowBox.right - buttonBox.width - OFFSET
     }
+    // Gone off the right side of the page
     if (distanceFromCenter(left, windowBox.right, buttonBox.width) > 0) {
         left = windowBox.left + OFFSET
     }
+    // Gone off the top of the page
     if (distanceFromCenter(top, windowBox.top, buttonBox.height) < 0) {
         top = windowBox.bottom - buttonBox.height - OFFSET
     }
+    // Gone off the bottom of the page
     if (distanceFromCenter(top, windowBox.bottom, buttonBox.height) > 0) {
         top = windowBox.top + OFFSET
     }
-
+    
+    // Sets the position of the buttom using string interpolation
     evilButton.style.left = `${left}px`
     evilButton.style.top = `${top}px`
 }
 
-
+// Gets the position of the mouse from the center of the button
 function distanceFromCenter(boxPosition, mousePosition, boxSize) {
-    // gets the center of the box    
+    // (x of the box, x of the mouse, the width of the box)
     return boxPosition - mousePosition + boxSize / 2
     }
