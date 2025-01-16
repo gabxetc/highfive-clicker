@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>High-Five Me!</title>
-  </head>
-  <body>
-    <button onclick="add()">Add</button>
-    <button onclick="subtract()">Subtract</button>
-    <p id="clickcount">Clicks:</p>
-  </body>
-  <script src="scripts/main.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kudos</title>
+    <script defer src="scripts/main.js"></script>
+    <style>
+        body {
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+        #evil-button {
+            position: absolute;
+            white-space: nowrap;
+            font-size: 2rem;
+
+        }
+    </style>
+</head>
+<body>
+    <button id="evil-button">High-Five Me!</button>
+</body>
 </html>
