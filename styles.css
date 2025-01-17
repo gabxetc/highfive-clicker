@@ -3,7 +3,7 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background-image: url(assets/highres_cloud1.jpg), url(assets/cute_gif.gif);
+   background-image: url(assets/cute_gif.gif), url(assets/highres_cloud1.jpg);
     background-size: cover;
 }
 
